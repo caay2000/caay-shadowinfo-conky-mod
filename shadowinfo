@@ -1,0 +1,102 @@
+#==============================================================================
+#                               CAAY ShadowInfo
+# License : Distributed under the terms of GNU GPL version 3 or later
+#
+# This version is a modification of conkyrc_seamod and Gotham mod
+#==============================================================================
+
+alignment top_right
+background yes
+border_inner_margin 0
+border_outer_margin 0
+double_buffer yes
+draw_borders no
+draw_graph_borders no
+draw_outline no
+draw_shades no
+format_human_readable yes
+gap_x 40
+gap_y 70
+maximum_width 450
+minimum_size 300 700
+no_buffers yes
+override_utf8_locale yes
+own_window yes
+own_window_argb_value 0
+own_window_argb_value 0
+own_window_argb_visual yes
+own_window_colour 000000
+own_window_colour 000000
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+own_window_transparent yes
+own_window_type desktop
+show_graph_range no	                                                                # Shows the time range covered by a graph. [YES or NO]
+show_graph_scale no                                                                 # Shows the maximum value in scaled graphs. [YES or NO]
+text_buffer_size 2048
+time_in_seconds true
+update_interval 0.1
+update_interval_on_battery 5
+uppercase no
+use_xft yes
+xftalpha 0.5
+xftfont caviar dreams:size=10
+
+# Defining colors
+default_color FFFFFF
+# Shades of Gray
+color1 DDDDDD
+color2 AAAAAA
+color3 888888
+# Orange
+color4 FFA300
+# Green
+color5 77B753
+
+TEXT
+${font Ubuntu:size=120:normal}${color EAEAEA}${time %H:%M}
+${voffset -140}${offset 20}${font Ubuntu:size=18:normal}${color1}${time %A} ${voffset -5}${font Ubuntu:size=24:bold}${color4}${time %d}${voffset -2}${font Ubuntu:size=18:normal}${color1} ${time  %B} ${time %Y}
+
+${font Ubuntu:size=22:bold}${color4}SYSTEM ${hr 2}
+${offset 20}${font Ubuntu:size=14:normal}${color1}Case: ${font Ubuntu:size=14:bold}${color4}${acpitemp}°C ${font Ubuntu:size=14:normal}${color1}   GPU: ${font Ubuntu:size=14:bold}${color4}${nvidia temp}°C ${font Ubuntu:size=14:normal}${color1}   Battery: ${font Ubuntu:size=14:bold}${color4}${battery_percent}%
+${offset 20}${font Ubuntu:size=14:normal}${color1}Distro: ${font Ubuntu:size=14:bold}${color4}${exec lsb_release -d -s}
+${offset 20}${font Ubuntu:size=14:normal}${color1}Uptime: ${font Ubuntu:size=14:bold}${color4}$uptime
+
+# Showing CPU Graph
+${offset 20}${cpugraph 80,370 77B753 FFA300 -l}
+${voffset -10}${offset 20}${cpugraph -15,370 666666 666666 -l}
+
+# Showing TOP 5 CPU-consumers
+${voffset -20}${offset 20}${font Ubuntu:size=18:bold}${color5}CPU${alignr}${cpu cpu 0}%
+${offset 20}${font Ubuntu:size=14:normal}${color4}${top name 1}${alignr}${top cpu 1}%
+${offset 20}${font Ubuntu:size=14:normal}${color1}${top name 2}${alignr}${top cpu 2}%
+${offset 20}${font Ubuntu:size=14:normal}${color2}${top name 3}${alignr}${top cpu 3}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 4}${alignr}${top cpu 4}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 5}${alignr}${top cpu 5}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 6}${alignr}${top cpu 6}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 7}${alignr}${top cpu 7}%
+
+#${offset 20}${memgraph 80,370 77B753 FFA300 -l}
+#${voffset -10}${offset 20}${memgraph -15,370 666666 666666 -l}
+#Showing memory part with TOP 5
+${offset 20}${font Ubuntu:size=18:bold}${color5}MEMORY - ${mem 0}${alignr}${memperc}%
+${offset 20}${font Ubuntu:size=14:normal}${color4}${top_mem name 1}${alignr}${top_mem mem 1}%
+${offset 20}${font Ubuntu:size=14:normal}${color1}${top_mem name 2}${alignr}${top_mem mem 2}%
+${offset 20}${font Ubuntu:size=14:normal}${color2}${top_mem name 3}${alignr}${top_mem mem 3}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top_mem name 4}${alignr}${top_mem mem 4}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top_mem name 5}${alignr}${top_mem mem 5}%
+
+# Showing Disk I/O Information
+${offset 20}${diskiograph 60,370 77B753 FFA300 -l}
+${voffset -10}${offset 20}${diskiograph -15,370 666666 666666 -l}
+${offset 20}${font Ubuntu:size=18:bold}${color5}DISKS
+${offset 20}${color2}${font Ubuntu:size=14:normal}Used${alignr}${fs_free /}
+${offset 20}${color2}${font Ubuntu:size=14:normal}Free${alignr}${fs_used /}
+
+# Showing Ethernet connection information
+${offset 20}${upspeedgraph wlp0s20f3 40,370 4B1B0C FF5C2B -l}
+${offset 20}${downspeedgraph wlp0s20f3 -40,370 324D23 77B753 -l}
+${voffset 30}${offset 20}${font Ubuntu:size=18:bold}${color5}ETHERNET
+${offset 20}${color2}${font Ubuntu:size=14:normal}Up                ${alignr}${upspeed wlp0s20f3} / ${totalup wlp0s20f3}
+${offset 20}${color2}${font Ubuntu:size=14:normal}Down              ${alignr}${downspeed wlp0s20f3} / ${totaldown wlp0s20f3}
+
+${font Ubuntu:size=22:bold}${color4}${hr 2}
