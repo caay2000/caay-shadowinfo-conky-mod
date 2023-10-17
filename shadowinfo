@@ -1,5 +1,5 @@
 #==============================================================================
-#                               CAAY ShadowInfo
+#                         CAAY ShadowInfo Conky Mod
 # License : Distributed under the terms of GNU GPL version 3 or later
 #
 # This version is a modification of conkyrc_seamod and Gotham mod
@@ -66,37 +66,37 @@ ${offset 20}${cpugraph 80,370 77B753 FFA300 -l}
 ${voffset -10}${offset 20}${cpugraph -15,370 666666 666666 -l}
 
 # Showing TOP 5 CPU-consumers
-${voffset -20}${offset 20}${font Ubuntu:size=18:bold}${color5}CPU${alignr}${cpu cpu 0}%
-${offset 20}${font Ubuntu:size=14:normal}${color4}${top name 1}${alignr}${top cpu 1}%
-${offset 20}${font Ubuntu:size=14:normal}${color1}${top name 2}${alignr}${top cpu 2}%
-${offset 20}${font Ubuntu:size=14:normal}${color2}${top name 3}${alignr}${top cpu 3}%
-${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 4}${alignr}${top cpu 4}%
-${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 5}${alignr}${top cpu 5}%
-${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 6}${alignr}${top cpu 6}%
-${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 7}${alignr}${top cpu 7}%
+${voffset -20}${offset 20}${font Ubuntu:size=18:bold}${color5}CPU           ${alignr}${cpu cpu 0}%
+${offset 20}${font Ubuntu:size=14:normal}${color4}${top name 1}             ${alignr}${top cpu 1}%
+${offset 20}${font Ubuntu:size=14:normal}${color1}${top name 2}             ${alignr}${top cpu 2}%
+${offset 20}${font Ubuntu:size=14:normal}${color2}${top name 3}             ${alignr}${top cpu 3}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 4}             ${alignr}${top cpu 4}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 5}             ${alignr}${top cpu 5}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 6}             ${alignr}${top cpu 6}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 7}             ${alignr}${top cpu 7}%
 
 #${offset 20}${memgraph 80,370 77B753 FFA300 -l}
 #${voffset -10}${offset 20}${memgraph -15,370 666666 666666 -l}
 #Showing memory part with TOP 5
-${offset 20}${font Ubuntu:size=18:bold}${color5}MEMORY - ${mem 0}${alignr}${memperc}%
-${offset 20}${font Ubuntu:size=14:normal}${color4}${top_mem name 1}${alignr}${top_mem mem 1}%
-${offset 20}${font Ubuntu:size=14:normal}${color1}${top_mem name 2}${alignr}${top_mem mem 2}%
-${offset 20}${font Ubuntu:size=14:normal}${color2}${top_mem name 3}${alignr}${top_mem mem 3}%
-${offset 20}${font Ubuntu:size=14:normal}${color3}${top_mem name 4}${alignr}${top_mem mem 4}%
-${offset 20}${font Ubuntu:size=14:normal}${color3}${top_mem name 5}${alignr}${top_mem mem 5}%
+${offset 20}${font Ubuntu:size=18:bold}${color5}MEMORY - ${mem 0}           ${alignr}${memperc}%
+${offset 20}${font Ubuntu:size=14:normal}${color4}${top_mem name 1}         ${alignr}${top_mem mem 1}%
+${offset 20}${font Ubuntu:size=14:normal}${color1}${top_mem name 2}         ${alignr}${top_mem mem 2}%
+${offset 20}${font Ubuntu:size=14:normal}${color2}${top_mem name 3}         ${alignr}${top_mem mem 3}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top_mem name 4}         ${alignr}${top_mem mem 4}%
+${offset 20}${font Ubuntu:size=14:normal}${color3}${top_mem name 5}         ${alignr}${top_mem mem 5}%
 
 # Showing Disk I/O Information
 ${offset 20}${diskiograph 60,370 77B753 FFA300 -l}
 ${voffset -10}${offset 20}${diskiograph -15,370 666666 666666 -l}
 ${offset 20}${font Ubuntu:size=18:bold}${color5}DISKS
-${offset 20}${color2}${font Ubuntu:size=14:normal}Used${alignr}${fs_free /}
-${offset 20}${color2}${font Ubuntu:size=14:normal}Free${alignr}${fs_used /}
+${offset 20}${color2}${font Ubuntu:size=14:normal}Used                      ${alignr}${fs_free /}
+${offset 20}${color2}${font Ubuntu:size=14:normal}Free                      ${alignr}${fs_used /}
 
 # Showing Ethernet connection information
 ${offset 20}${upspeedgraph wlp0s20f3 40,370 4B1B0C FF5C2B -l}
 ${offset 20}${downspeedgraph wlp0s20f3 -40,370 324D23 77B753 -l}
 ${voffset 30}${offset 20}${font Ubuntu:size=18:bold}${color5}ETHERNET
-${offset 20}${color2}${font Ubuntu:size=14:normal}Up                ${alignr}${upspeed wlp0s20f3} / ${totalup wlp0s20f3}
-${offset 20}${color2}${font Ubuntu:size=14:normal}Down              ${alignr}${downspeed wlp0s20f3} / ${totaldown wlp0s20f3}
+${offset 20}${color2}${font Ubuntu:size=14:normal}Up                        ${alignr}${upspeed wlp0s20f3} / ${totalup wlp0s20f3}
+${offset 20}${color2}${font Ubuntu:size=14:normal}Down                      ${alignr}${downspeed wlp0s20f3} / ${totaldown wlp0s20f3}
 
 ${font Ubuntu:size=22:bold}${color4}${hr 2}
