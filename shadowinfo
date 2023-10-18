@@ -51,13 +51,15 @@ color3 888888
 color4 FFA300
 # Green
 color5 77B753
+# Basic Grey
+color6 666666
 
 TEXT
 ${font Ubuntu:size=120:normal}${color EAEAEA}${time %H:%M}
 ${voffset -140}${offset 20}${font Ubuntu:size=18:normal}${color1}${time %A} ${voffset -5}${font Ubuntu:size=24:bold}${color4}${time %d}${voffset -2}${font Ubuntu:size=18:normal}${color1} ${time  %B} ${time %Y}
 
 ${font Ubuntu:size=22:bold}${color4}SYSTEM ${hr 2}
-${offset 20}${font Ubuntu:size=14:normal}${color1}Case: ${font Ubuntu:size=14:bold}${color4}${acpitemp}°C ${font Ubuntu:size=14:normal}${color1}   GPU: ${font Ubuntu:size=14:bold}${color4}${nvidia temp}°C ${font Ubuntu:size=14:normal}${color1}   Battery: ${font Ubuntu:size=14:bold}${color4}${battery_percent}%
+${offset 20}${font Ubuntu:size=14:normal}${color1}Case: ${font Ubuntu:size=14:bold}${color4}${acpitemp}°C ${font Ubuntu:size=14:normal}${color1}   GPU: ${font Ubuntu:size=14:bold}${color4}${nvidia temp}°C ${font Ubuntu:size=14:normal}${color1}   Battery: ${font Ubuntu:size=14:bold}${color4}${battery_percent}% - ${battery_short BAT0}
 ${offset 20}${font Ubuntu:size=14:normal}${color1}Distro: ${font Ubuntu:size=14:bold}${color4}${exec lsb_release -d -s}
 ${offset 20}${font Ubuntu:size=14:normal}${color1}Uptime: ${font Ubuntu:size=14:bold}${color4}$uptime
 
@@ -75,8 +77,6 @@ ${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 5}             ${al
 ${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 6}             ${alignr}${top cpu 6}%
 ${offset 20}${font Ubuntu:size=14:normal}${color3}${top name 7}             ${alignr}${top cpu 7}%
 
-#${offset 20}${memgraph 80,370 77B753 FFA300 -l}
-#${voffset -10}${offset 20}${memgraph -15,370 666666 666666 -l}
 #Showing memory part with TOP 5
 ${offset 20}${font Ubuntu:size=18:bold}${color5}MEMORY - ${mem 0}           ${alignr}${memperc}%
 ${offset 20}${font Ubuntu:size=14:normal}${color4}${top_mem name 1}         ${alignr}${top_mem mem 1}%
@@ -86,17 +86,17 @@ ${offset 20}${font Ubuntu:size=14:normal}${color3}${top_mem name 4}         ${al
 ${offset 20}${font Ubuntu:size=14:normal}${color3}${top_mem name 5}         ${alignr}${top_mem mem 5}%
 
 # Showing Disk I/O Information
-${offset 20}${diskiograph 60,370 77B753 FFA300 -l}
-${voffset -10}${offset 20}${diskiograph -15,370 666666 666666 -l}
+${offset 20}${diskiograph 40,370 77B753 FFA300 -l}
+${voffset -17}${offset 20}${diskiograph -8,370 ${color6} ${color6} -l}
 ${offset 20}${font Ubuntu:size=18:bold}${color5}DISKS
 ${offset 20}${color2}${font Ubuntu:size=14:normal}Used                      ${alignr}${fs_free /}
 ${offset 20}${color2}${font Ubuntu:size=14:normal}Free                      ${alignr}${fs_used /}
 
 # Showing Ethernet connection information
-${offset 20}${upspeedgraph wlp0s20f3 40,370 4B1B0C FF5C2B -l}
-${offset 20}${downspeedgraph wlp0s20f3 -40,370 324D23 77B753 -l}
-${voffset 30}${offset 20}${font Ubuntu:size=18:bold}${color5}ETHERNET
-${offset 20}${color2}${font Ubuntu:size=14:normal}Up                        ${alignr}${upspeed wlp0s20f3} / ${totalup wlp0s20f3}
+${offset 20}${downspeedgraph wlp0s20f3 40,370 77B753 FFA300 -l}
+${voffset -17}${offset 20}${upspeedgraph wlp0s20f3 -8,370 ${color6} ${color6} -l}
+${voffset 10}${offset 20}${font Ubuntu:size=18:bold}${color5}ETHERNET
 ${offset 20}${color2}${font Ubuntu:size=14:normal}Down                      ${alignr}${downspeed wlp0s20f3} / ${totaldown wlp0s20f3}
+${offset 20}${color2}${font Ubuntu:size=14:normal}Up                        ${alignr}${upspeed wlp0s20f3} / ${totalup wlp0s20f3}
 
 ${font Ubuntu:size=22:bold}${color4}${hr 2}
