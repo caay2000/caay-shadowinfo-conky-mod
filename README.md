@@ -25,14 +25,16 @@ You can check this http://www.ifxgroup.net/conky.htm in order to understand how 
 
 ## Rainmeter (Windows)
 
+![rainmeter screenshot](rainmeter/screenshot.jpg)
+
 ### What it shows
 
 - Clock, date, uptime and local IP
-- **CPU**: usage %, temperature, usage graph and top 3 processes
-- **GPU** (NVIDIA): usage %, temperature, fan speed (%) and usage graph
-- **Memory**: usage %, bar and top 3 processes
-- **Disk**: used %, free / total space, read / write speed and graphs
-- **Network**: download / upload speed, totals and graphs
+- **CPU**: usage %, CPU and case temperature, gradient usage graph with shadow and top 6 processes
+- **GPU** (NVIDIA): usage %, temperature, fan speed (%) and gradient usage graph with shadow
+- **Memory**: usage %, bar and top 6 processes
+- **Disk**: used %, free / total space, read / write speed and mirrored graphs
+- **Network**: download / upload speed, totals and mirrored graphs
 
 ### Requirements
 
@@ -58,6 +60,11 @@ Edit the `[Variables]` section at the top of `ShadowInfo.ini` and refresh the sk
 | `DateRightEdge` | `200` | Right edge (px) where the date block is aligned |
 | `GPUTempAlarm` | `85` | GPU temperature (°C) that triggers the alarm |
 | `AlarmColor` | `255,60,60` | Color used while the alarm is active |
+| `GraphGradient` | green → yellow → orange | Gradient that fills the CPU and GPU graphs |
+| `GraphShadowColor` | `102,102,102` | Color of the mirrored "shadow" under those graphs |
+| `GraphShadowH` | `14` | Height (px) of that shadow |
+| `GraphUpGradient` | dark red → red | Gradient of the upper disk / network graph (read, download) |
+| `GraphDownColor` | `119,183,83` | Color of the lower, mirrored graph (write, upload) |
 
 ### GPU temperature alarm
 
@@ -71,3 +78,5 @@ To try it without heating the GPU, lower `GPUTempAlarm` to something like `30` a
 - GPU temperature and fan speed are refreshed every 5 seconds, the top processes every 10-15 seconds.
 - The fan speed is a percentage of its maximum (`nvidia-smi` does not report RPM).
 - The CPU temperature shown is the hottest core.
+- The case temperature is the motherboard ACPI thermal zone, the same value Conky shows as *Case* (`acpitemp`).
+  Windows provides it without extra software; it is hidden if the motherboard does not expose one.
