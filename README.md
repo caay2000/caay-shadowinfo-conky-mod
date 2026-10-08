@@ -2,21 +2,22 @@
 
 Simple system monitor for the desktop, in two flavours:
 
-- **Linux**: the original [Conky](https://github.com/brndnmtthws/conky) mod (without lua scripts) — file `shadowinfo`
-- **Windows**: a [Rainmeter](https://www.rainmeter.net/) port of the same look — file `ShadowInfo.ini`
+- **Linux**: the original [Conky](https://github.com/brndnmtthws/conky) mod (without lua scripts) — folder [`conky`](conky)
+- **Windows**: a [Rainmeter](https://www.rainmeter.net/) port of the same look — folder [`rainmeter`](rainmeter)
 
 Based on *conkyrc_seamod* and *gotham* mod
 
-## Example
-![screenshot](screenshot.png)
-
 ## Conky (Linux)
+
+![conky screenshot](conky/screenshot.png)
 
 ### Install
 
 `git clone https://github.com/caay2000/caay-shadowinfo-conky-mod`
 
-`mv caay-shadowinfo-conky-mod $HOME/.conky`
+`mkdir -p $HOME/.conky && cp caay-shadowinfo-conky-mod/conky/shadowinfo $HOME/.conky/`
+
+`conky -c $HOME/.conky/shadowinfo`
 
 ### Customization
 
@@ -43,7 +44,7 @@ You can check this http://www.ifxgroup.net/conky.htm in order to understand how 
 ### Install
 
 1. Create the folder `Documents\Rainmeter\Skins\ShadowInfo`
-2. Copy `ShadowInfo.ini` into it
+2. Copy `rainmeter/ShadowInfo.ini` into it
 3. In Rainmeter: *Manage* → *Refresh all* → select `ShadowInfo.ini` → *Load*
 
 ### Customization
