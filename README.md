@@ -1,31 +1,64 @@
-# CAAY Shadow Info Conky Mod
+<h1 align="center">CAAY Shadow Info Conky Mod</h1>
 
-Simple system monitor for the desktop, in two flavours:
+<p align="center">
+  Simple system monitor for the desktop, in two flavours.<br>
+  <sub>Based on <i>conkyrc_seamod</i> and <i>gotham</i> mod</sub>
+</p>
 
-- **Linux**: the original [Conky](https://github.com/brndnmtthws/conky) mod (without lua scripts) — folder [`conky`](conky)
-- **Windows**: a [Rainmeter](https://www.rainmeter.net/) port of the same look — folder [`rainmeter`](rainmeter)
+<p align="center">
+  <a href="#conky-linux"><img alt="Linux: Conky" src="https://img.shields.io/badge/Linux-Conky-77B753?logo=linux&logoColor=white"></a>
+  <a href="#rainmeter-windows"><img alt="Windows: Rainmeter" src="https://img.shields.io/badge/Windows-Rainmeter-0078D6"></a>
+  <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/caay2000/caay-shadowinfo-conky-mod"></a>
+</p>
 
-Based on *conkyrc_seamod* and *gotham* mod
+<table align="center">
+  <tr>
+    <th align="center"><a href="#conky-linux">Conky (Linux)</a></th>
+    <th align="center"><a href="#rainmeter-windows">Rainmeter (Windows)</a></th>
+  </tr>
+  <tr>
+    <td align="center" valign="top"><img src="conky/screenshot.png" alt="Conky screenshot" height="720"></td>
+    <td align="center" valign="top"><img src="rainmeter/screenshot.jpg" alt="Rainmeter screenshot" height="720"></td>
+  </tr>
+</table>
+
+| | Platform | Folder | Built on |
+| --- | --- | --- | --- |
+| 🐧 | Linux | [`conky`](conky) | [Conky](https://github.com/brndnmtthws/conky), the original mod (no lua scripts) |
+| 🪟 | Windows | [`rainmeter`](rainmeter) | [Rainmeter](https://www.rainmeter.net/), a port of the same look |
+
+## Contents
+
+- [Conky (Linux)](#conky-linux)
+  - [Install](#install)
+  - [Customization](#customization)
+- [Rainmeter (Windows)](#rainmeter-windows)
+  - [What it shows](#what-it-shows)
+  - [Requirements](#requirements)
+  - [Install](#install-1)
+  - [Customization](#customization-1)
+  - [GPU temperature alarm](#gpu-temperature-alarm)
+  - [Notes](#notes)
+
+---
 
 ## Conky (Linux)
 
-![conky screenshot](conky/screenshot.png)
-
 ### Install
 
-`git clone https://github.com/caay2000/caay-shadowinfo-conky-mod`
-
-`mkdir -p $HOME/.conky && cp caay-shadowinfo-conky-mod/conky/shadowinfo $HOME/.conky/`
-
-`conky -c $HOME/.conky/shadowinfo`
+```sh
+git clone https://github.com/caay2000/caay-shadowinfo-conky-mod
+mkdir -p $HOME/.conky && cp caay-shadowinfo-conky-mod/conky/shadowinfo $HOME/.conky/
+conky -c $HOME/.conky/shadowinfo
+```
 
 ### Customization
 
-You can check this http://www.ifxgroup.net/conky.htm in order to understand how to modify this mod
+See the [Conky reference at ifxgroup.net](http://www.ifxgroup.net/conky.htm) to understand how to modify this mod.
+
+---
 
 ## Rainmeter (Windows)
-
-![rainmeter screenshot](rainmeter/screenshot.jpg)
 
 ### What it shows
 
@@ -71,7 +104,8 @@ Edit the `[Variables]` section at the top of `ShadowInfo.ini` and refresh the sk
 When the GPU reaches `GPUTempAlarm` degrees, the whole GPU block (texts and graph) turns to `AlarmColor`,
 and goes back to its normal colors as soon as the temperature drops below it.
 
-To try it without heating the GPU, lower `GPUTempAlarm` to something like `30` and refresh the skin.
+> [!TIP]
+> To try it without heating the GPU, lower `GPUTempAlarm` to something like `30` and refresh the skin.
 
 ### Notes
 
