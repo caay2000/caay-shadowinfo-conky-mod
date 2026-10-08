@@ -55,7 +55,7 @@ Edit the `[Variables]` section at the top of `ShadowInfo.ini` and refresh the sk
 | `NetInterface` | `Ethernet` | Name of the network adapter to monitor (e.g. `Wi-Fi`) |
 | `Drive` | `C:` | Disk to monitor |
 | `DateRightEdge` | `200` | Right edge (px) where the date block is aligned |
-| `GPUTempAlarm` | `80` | GPU temperature (°C) that triggers the alarm |
+| `GPUTempAlarm` | `85` | GPU temperature (°C) that triggers the alarm |
 | `AlarmColor` | `255,60,60` | Color used while the alarm is active |
 
 ### GPU temperature alarm
